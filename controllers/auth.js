@@ -8,7 +8,7 @@ const adminPassword = 'admin123';
 // Signin Controller
 const Signin = (req, res, next) => {
   const { email, password } = req.body;
-
+console.log("idhar hun")
   try {
     
     if (email === adminEmail && password === adminPassword) {

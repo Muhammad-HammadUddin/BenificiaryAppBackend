@@ -26,11 +26,12 @@ connect();
 const app = express();
 
 app.use(cors({
-  origin: 'https://hackathonfrontend-gilt.vercel.app',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
+// http://localhost:3000/api/auth/login
+// https://benificiary-app-backend.vercel.app/
 
 app.options('*', cors());
 
@@ -54,6 +55,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
