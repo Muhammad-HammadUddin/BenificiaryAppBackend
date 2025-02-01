@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import User from "./routes/User.js"
 import Staff from "./routes/Staff.js"
 import authRouter from "./routes/auth.js"
-
+const port = process.env.PORT || 3000;
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
@@ -26,9 +26,9 @@ connect();
 const app = express();
 
 app.use(cors({
-  origin: 'hackathonfrontend-gilt.vercel.app/', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  credentials: true,  
+  origin: 'https://hackathonfrontend-gilt.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
 
@@ -54,6 +54,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 });

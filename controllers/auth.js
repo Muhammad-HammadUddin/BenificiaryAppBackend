@@ -19,7 +19,7 @@ const Signin = (req, res, next) => {
       res.cookie("access_token", token, {
         httpOnly: true,  // Makes the cookie inaccessible to JavaScript (security feature)
         secure: true,
-        sameSite: 'Strict',  // Prevents cross-site request forgery (CSRF) attacks
+        sameSite: 'None',  // Prevents cross-site request forgery (CSRF) attacks
         maxAge: 3600 * 1000,  // Expiry time in milliseconds (1 hour in this case)
         path: '/',  // Ensure the cookie is accessible throughout the entire domain
       });
