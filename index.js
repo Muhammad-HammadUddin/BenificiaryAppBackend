@@ -26,7 +26,7 @@ connect();
 const app = express();
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://hackathon-frontendd.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
