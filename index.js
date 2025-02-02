@@ -11,7 +11,7 @@ import cors from 'cors';
 dotenv.config();
 
 const connect = () => {
-  mongoose.connect(process.env.MONGO_URL)
+  mongoose.connect("mongodb+srv://hammaduddin083:1234567890@saylanihackathon.zt6fu.mongodb.net/")
     .then(() => {
       console.log('Connected to database');
       console.log("Itni labi kya hai yeh database");
