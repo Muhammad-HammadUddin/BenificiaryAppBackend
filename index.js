@@ -1,20 +1,21 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import dotenv from 'dotenv';  // You can remove this if you're not using environment variables
 import User from "./routes/User.js"
 import Staff from "./routes/Staff.js"
 import authRouter from "./routes/auth.js"
-const port = process.env.PORT || 3000;
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
-dotenv.config();
+dotenv.config();  // Remove this if you're not using .env files anymore
 
+const port = process.env.PORT || 3000;
+
+// MongoDB direct connection string
 const connect = () => {
-  mongoose.connect("mongodb+srv://hammaduddin083:1234567890@saylanihackathon.zt6fu.mongodb.net/")
+  mongoose.connect("mongodb+srv://hammaduddin083:1234567890@saylanihackathon.zt6fu.mongodb.net/")  // Direct Mongo URI
     .then(() => {
       console.log('Connected to database');
-      console.log("Itni labi kya hai yeh database");
     })
     .catch((err) => {
       console.log('Error connecting to database', err);
@@ -30,19 +31,14 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-// http://localhost:3000/api/auth/login
-// https://benificiary-app-backend.vercel.app/
 
 app.options('*', cors());
 
 app.use(cookieParser());
 app.use(express.json());
 
-
-app.use("/api/user",User);
-
-app.use("/api/Staff",Staff)
-
+app.use("/api/user", User);
+app.use("/api/Staff", Staff);
 app.use("/api/auth", authRouter);
 
 app.use((err, req, res, next) => {
