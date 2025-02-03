@@ -38,11 +38,11 @@ export const verifyDepartmentStaff=async(req,res,next)=>{
     if (!findDeparment) {
       console.log("No  department Staf  Found");
       const token = jwt.sign({ Name }, "1232fdsfas", );
-      
+    
            
             res.cookie("access_token", token, {
               httpOnly: true, 
-              secure: false,
+              secure: true,
               sameSite: 'Strict', 
               maxAge: 3600 * 1000,  
               path: '/',  
