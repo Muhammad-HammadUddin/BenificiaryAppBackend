@@ -21,13 +21,12 @@ const connect = () => {
       console.log('Error connecting to database', err);
     });
 };
-
 connect();
 
 const app = express();
 
 app.use(cors({
-  origin: 'https://hackathon-frontendd.vercel.app',
+  origin: 'https://hackathon-frontenddd.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
