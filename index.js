@@ -11,9 +11,9 @@ dotenv.config();  // Remove this if you're not using .env files anymore
 
 const port = process.env.PORT || 3000;
 
-// MongoDB direct connection string
+
 const connect = () => {
-  mongoose.connect("mongodb+srv://hammaduddin083:1234567890@saylanihackathon.zt6fu.mongodb.net/")  // Direct Mongo URI
+  mongoose.connect("mongodb+srv://hammaduddin083:1234567890@saylanihackathon.zt6fu.mongodb.net/") 
     .then(() => {
       console.log('Connected to database');
     })
@@ -51,6 +51,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 });
