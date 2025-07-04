@@ -10,7 +10,7 @@ import cors from 'cors';
 dotenv.config();  // Remove this if you're not using .env files anymore
 
 const port = process.env.PORT || 3000;
-
+console.log(process.env.MONGO_URI)
 // MongoDB direct connection string
 const connect = () => {
   mongoose.connect(process.env.MONGO_URI)  // Direct Mongo URI
@@ -22,6 +22,7 @@ const connect = () => {
     });
 };
 connect();
+
 
 const app = express();
 
