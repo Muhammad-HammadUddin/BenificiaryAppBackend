@@ -27,7 +27,7 @@ connect();
 const app = express();
 
 app.use(cors({
-  origin: 'https://frontend-alpha-ten-96.vercel.app',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
